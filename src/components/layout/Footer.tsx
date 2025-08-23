@@ -1,25 +1,27 @@
+import Logo from "@/assets/icons/Logo";
 import { Car, Facebook, Instagram, Mail, MapPin, Phone, Twitter } from "lucide-react";
 
 
 function Footer() {
     return (
-    <footer className="bg-gray-900 text-gray-300">
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <footer className="bg-muted-foreground">
+      <div className="container mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
         
  
         <div>
-          <div className="flex items-center space-x-2">
-            <Car className="w-7 h-7 text-yellow-400" />
-            <span className="text-2xl font-bold text-white">BeRide</span>
+          <div className="items-center space-x-2">
+            {/* <Car className="w-7 h-7 text-yellow-400" /> */}
+            <Logo />
+            {/* <span className="text-2xl font-bold text-accent-foreground">BeRide</span> */}
           </div>
-          <p className="mt-3 text-sm">
+          <p className="text-accent-foreground mt-3 text-sm">
             Book your ride anytime, anywhere. Fast, safe, and reliable ride booking at your fingertips.
           </p>
         </div>
 
   
         <div>
-          <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
+          <h3 className="text-lg font-semibold text-accent-foreground mb-4">Quick Links</h3>
           <ul className="space-y-2 text-sm">
             <li><a href="#how-it-works" className="hover:text-yellow-400">How It Works</a></li>
             <li><a href="#services" className="hover:text-yellow-400">Services</a></li>
@@ -30,7 +32,7 @@ function Footer() {
 
       
         <div>
-          <h3 className="text-lg font-semibold text-white mb-4">Contact Us</h3>
+          <h3 className="text-lg font-semibold text-accent-foreground mb-4">Contact Us</h3>
           <ul className="space-y-3 text-sm">
             <li className="flex items-center space-x-2">
               <MapPin className="w-5 h-5 text-yellow-400" />
@@ -49,7 +51,7 @@ function Footer() {
 
 
         <div>
-          <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
+          <h3 className="text-lg font-semibold text-accent-foreground mb-4">Follow Us</h3>
           <div className="flex space-x-4">
             <a href="#" className="hover:text-yellow-400">
               <Facebook className="w-6 h-6" />
@@ -65,7 +67,7 @@ function Footer() {
       </div>
 
 
-      <div className="border-t border-gray-700 text-center py-6 text-sm">
+      <div className="border-t border-gray-700 text-center text-accent-foreground py-6 text-sm">
         <p>© {new Date().getFullYear()} BeRide. All rights reserved.</p>
       </div>
     </footer>

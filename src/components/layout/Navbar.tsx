@@ -1,4 +1,4 @@
-// import Logo from "@/components/navbar-components/logo"
+
 
 
 import Logo from "@/assets/icons/Logo"
@@ -14,6 +14,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import { ModeToggle } from "./ModeToggler"
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
@@ -25,8 +26,8 @@ const navigationLinks = [
 
 export default function Navbar() {
   return (
-    <header className="border-b px-4 md:px-6">
-      <div className="flex h-16 items-center justify-between gap-4">
+    <header className="border-b">
+      <div className="container mx-auto px-4 flex h-16 items-center justify-between gap-4">
         {/* Left side */}
         <div className="flex items-center gap-2">
           {/* Mobile menu trigger */}
@@ -86,6 +87,7 @@ export default function Navbar() {
           <div className="flex items-center gap-6">
             <a href="#" className="text-primary hover:text-primary/90">
               <Logo />
+              {/* <span className="text-2xl font-bold text-accent-foreground">BeRide</span> */}
             </a>
             {/* Navigation menu */}
             <NavigationMenu className="max-md:hidden">
@@ -107,6 +109,7 @@ export default function Navbar() {
         </div>
         {/* Right side */}
         <div className="flex items-center gap-2">
+          <ModeToggle />
           <Button asChild variant="ghost" size="sm" className="text-sm">
             <a href="#">Sign In</a>
           </Button>
