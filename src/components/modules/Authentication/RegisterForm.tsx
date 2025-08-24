@@ -16,10 +16,13 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-// import { useRegisterMutation } from "@/redux/features/auth/auth.api";
+
+import { useRegisterMutation } from '@/redux/features/auth/auth.api';
 
 import Password from '@/components/ui/Password';
-import toast from "react-hot-toast";
+import { toast } from 'sonner';
+// import { register } from 'module';
+// import toast from "react-hot-toast";
 
 
 
@@ -42,7 +45,8 @@ export function RegisterForm({
     className,
     ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
-    // const [register] = useRegisterMutation();
+
+    const [register] = useRegisterMutation();
 
     // const navigate = useNavigate();
 
@@ -56,22 +60,40 @@ export function RegisterForm({
         },
     });
 
-    const onSubmit = async (data: z.infer<typeof registerSchema>) => {
+        // const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    const onSubmit =async (data: z.infer<typeof registerSchema>) => {
         const userInfo = {
-            name: data.name,
-            email: data.email,
-            password: data.password,
-        };
-
-        try {
-            const result = await register(userInfo).unwrap();
-            console.log(result);
-            toast.success("User Created Successfully!");
-            // navigate("/");
-        } catch (error) {
-            console.error(error);
+            name:data.name,
+            email:data.email,
+            password: data.password
         }
-    };
+        try {
+           const result=await register(userInfo).unwrap()
+           console.log(result)
+           toast.success("User created successfully")
+        //    navigate("/verify")
+        } catch (error) {
+           console.error(error) 
+        }
+        
+    }
+
+    // const onSubmit = async  (data: z.infer<typeof registerSchema>) => {
+    //     const userInfo = {
+    //         name: data.name,
+    //         email: data.email,
+    //         password: data.password,
+    //     };
+
+    //     try {
+    //         const result = await register(userInfo).unwrap();
+    //         console.log(result);
+    //         toast.success("User Created Successfully!");
+    //         // navigate("/");
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+    // };
 
     return (
         <div className={cn("flex flex-col gap-6", className)} {...props}>

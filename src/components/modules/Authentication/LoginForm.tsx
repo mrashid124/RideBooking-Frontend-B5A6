@@ -12,8 +12,9 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 // import { useLoginMutation } from "@/redux/features/auth/auth.api";
 import { useForm, type FieldValues, type SubmitHandler } from "react-hook-form";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router";
+import { toast } from "sonner";
 
 export function LoginForm({
   className,
